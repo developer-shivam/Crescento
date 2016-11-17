@@ -13,6 +13,7 @@ import android.graphics.PorterDuffXfermode;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewOutlineProvider;
@@ -54,6 +55,9 @@ public class HeaderImageView extends ImageView {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.BLACK);
 
+        mClipPath = new Path();
+        mOutlinePath = new Path();
+
         TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.HeaderImageView, 0, 0);
         if (styledAttributes.hasValue(R.styleable.HeaderImageView_height)) {
             curvatureHeight = (int) styledAttributes.getDimension(R.styleable.HeaderImageView_height, getDpForPixel(curvatureHeight));
@@ -78,7 +82,11 @@ public class HeaderImageView extends ImageView {
         ViewCompat.setElevation(this, ViewCompat.getElevation(this));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            setOutlineProvider(getOutlineProvider());
+            try {
+                setOutlineProvider(getOutlineProvider());
+            } catch (Exception e) {
+                Log.d("Outline path", e.getMessage());
+            }
         }
     }
 

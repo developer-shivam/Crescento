@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
-        android:elevation="5dp"
-        android:padding="20dp"
+        android:elevation="10dp"
         android:src="@drawable/bike_wallpaper"
-        attribute:height="40dp"/>
+        attribute:height="20dp"/>
 </RelativeLayout>
