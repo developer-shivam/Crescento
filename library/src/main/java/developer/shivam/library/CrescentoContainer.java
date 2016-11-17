@@ -18,7 +18,6 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 
 public class CrescentoContainer extends FrameLayout {
 
@@ -60,8 +59,8 @@ public class CrescentoContainer extends FrameLayout {
         mOutlinePath = new Path();
 
         TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_height)) {
-            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_height, getDpForPixel(curvatureHeight));
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_crescent)) {
+            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_crescent, getDpForPixel(curvatureHeight));
         }
 
         styledAttributes.recycle();
@@ -75,9 +74,6 @@ public class CrescentoContainer extends FrameLayout {
         height = getMeasuredHeight();
 
         mClipPath = PathProvider.getClipPath(width, height, curvatureHeight,
-                getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight());
-
-        mOutlinePath = PathProvider.getOutlinePath(width, height, curvatureHeight,
                 getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight());
 
         ViewCompat.setElevation(this, ViewCompat.getElevation(this));
@@ -97,7 +93,8 @@ public class CrescentoContainer extends FrameLayout {
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
-                outline.setConvexPath(mOutlinePath);
+                outline.setConvexPath(PathProvider.getOutlinePath(view, width, height, curvatureHeight,
+                        getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
             }
         };
     }

@@ -59,7 +59,7 @@ public class CrescentoImageView extends ImageView {
         mOutlinePath = new Path();
 
         TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_height)) {
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_crescent)) {
             curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_crescent, getDpForPixel(curvatureHeight));
         }
 
@@ -74,9 +74,6 @@ public class CrescentoImageView extends ImageView {
         height = getMeasuredHeight();
 
         mClipPath = PathProvider.getClipPath(width, height, curvatureHeight,
-                getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight());
-
-        mOutlinePath = PathProvider.getOutlinePath(width, height, curvatureHeight,
                 getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight());
 
         ViewCompat.setElevation(this, ViewCompat.getElevation(this));
@@ -96,7 +93,8 @@ public class CrescentoImageView extends ImageView {
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
-                outline.setConvexPath(mOutlinePath);
+                outline.setConvexPath(PathProvider.getOutlinePath(view, width, height, curvatureHeight,
+                        getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
             }
         };
     }

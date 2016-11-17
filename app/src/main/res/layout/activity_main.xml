@@ -5,13 +5,22 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="developer.shivam.headerimageview.MainActivity">
+    tools:context="developer.shivam.crescento.MainActivity">
 
-    <developer.shivam.library.CrescentoImageView
+    <developer.shivam.library.CrescentoImageView android:id="@+id/crescentoImageView"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
         android:elevation="10dp"
+        attribute:crescent="40dp"
+        android:padding="10dp"
         android:src="@drawable/bike_wallpaper"
-        attribute:crescent="100dp"/>
+        android:layout_centerInParent="true"/>
+
+    <SeekBar android:id="@+id/sbElevationController"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:padding="10dp"/>
 </RelativeLayout>

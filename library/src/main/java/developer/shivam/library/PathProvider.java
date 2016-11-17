@@ -1,22 +1,27 @@
 package developer.shivam.library;
 
 import android.graphics.Path;
+import android.os.Build;
+import android.view.View;
 
 class PathProvider {
 
-    static int ALPHA = 2;
+    private static int ALPHA = 0;
 
-    static Path getOutlinePath(int width, int height, int perpendicularHeight,
+    static Path getOutlinePath(View view, int width, int height, int perpendicularHeight,
                                int paddingTop, int paddingBottom, int paddingLeft, int paddingRight) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ALPHA = (int) view.getElevation();
+        }
         Path mPath = new Path();
-        mPath.moveTo(paddingLeft - ALPHA, paddingTop - ALPHA);
-        mPath.lineTo(paddingLeft - ALPHA, height - perpendicularHeight - paddingBottom + ALPHA);
-        mPath.cubicTo(paddingLeft - ALPHA, height - perpendicularHeight - paddingBottom + ALPHA,
-                width/2 - paddingRight + ALPHA, height - paddingBottom + ALPHA,
-                width - paddingRight + ALPHA, height - perpendicularHeight - paddingBottom + ALPHA);
-        mPath.lineTo(width - paddingRight + ALPHA, paddingTop - ALPHA);
-        mPath.lineTo(width/2 - paddingRight + ALPHA, paddingTop - ALPHA);
-        mPath.lineTo(paddingLeft - ALPHA, paddingTop - ALPHA);
+        mPath.moveTo(paddingLeft - ALPHA/4, paddingTop - ALPHA/8);
+        mPath.lineTo(paddingLeft - ALPHA/4, height - perpendicularHeight - paddingBottom + ALPHA/8);
+        mPath.cubicTo(paddingLeft - ALPHA/4, height - perpendicularHeight - paddingBottom + ALPHA/8,
+                width/2 - paddingRight - ALPHA/4, height - paddingBottom + ALPHA/2,
+                width - paddingRight + ALPHA/4, height - perpendicularHeight - paddingBottom + ALPHA/8);
+        mPath.lineTo(width - paddingRight + ALPHA/4, paddingTop - ALPHA/8);
+        mPath.lineTo(width - paddingRight - ALPHA/4, paddingTop - ALPHA/8);
+        mPath.lineTo(paddingLeft - ALPHA/4, paddingTop - ALPHA/8);
         mPath.close();
         return mPath;
     }
