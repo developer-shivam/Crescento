@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     tools:context="developer.shivam.headerimageview.MainActivity">
 
-    <developer.shivam.library.HeaderImageView
+    <developer.shivam.library.CrescentoImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
         android:elevation="10dp"
         android:src="@drawable/bike_wallpaper"
-        attribute:height="20dp"/>
+        attribute:crescent="100dp"/>
 </RelativeLayout>

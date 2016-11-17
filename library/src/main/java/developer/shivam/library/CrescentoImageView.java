@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.ImageView;
 
-public class HeaderImageView extends ImageView {
+public class CrescentoImageView extends ImageView {
 
     Context mContext;
 
@@ -37,12 +37,12 @@ public class HeaderImageView extends ImageView {
     Paint mPaint;
     private PorterDuffXfermode porterDuffXfermode;
 
-    public HeaderImageView(Context context) {
+    public CrescentoImageView(Context context) {
         super(context);
         init(context, null);
     }
 
-    public HeaderImageView(Context context, AttributeSet attrs) {
+    public CrescentoImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
@@ -58,9 +58,9 @@ public class HeaderImageView extends ImageView {
         mClipPath = new Path();
         mOutlinePath = new Path();
 
-        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.HeaderImageView, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.HeaderImageView_height)) {
-            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.HeaderImageView_height, getDpForPixel(curvatureHeight));
+        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_height)) {
+            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_crescent, getDpForPixel(curvatureHeight));
         }
 
         styledAttributes.recycle();
