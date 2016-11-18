@@ -3,7 +3,7 @@ Crescento
 
 Android library that adds a curve at the below of image views and relative layouts. **CrescentoImageView** and **CrescentoContainer** are the image view and relative layout respectively. You can change the radius of curve with **attribute:curvature**.
 
-![Sample Image 1][SampleOne] ![Sample Image 2][SampleTwo]
+![Sample Image 1][SampleOne]
 
 Overview
 --------
@@ -14,7 +14,7 @@ Overview
 * **Tint**: It add tint on **CrescentoImageView** by using **attribute:tintColor**. It pick color automatically from the image if **tintMode** is set to **automatic**.
 * **Alpha**: Add transparency in tint by using **attribute:tintAlpha**. Varies from 0 to 255.
 
-Use with **KenBurnsView[KenBurnsView]**
+Use with **[KenBurnsView]**
 ---------------------------------------
 ```java
 <developer.shivam.library.CrescentoContainer android:id="@+id/crescentoContainer"

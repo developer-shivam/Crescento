@@ -15,10 +15,10 @@
         android:scaleType="centerCrop"
         attribute:curvature="50dp">
 
-        <com.flaviofaria.kenburnsview.KenBurnsView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/wallpaper2" />
+            android:src="@color/colorPrimary" />
 
         <android.support.v7.widget.CardView
             android:layout_width="80dp"
@@ -142,7 +142,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:elevation="10dp"
+                android:elevation="5dp"
                 android:layout_margin="8dp"
                 attribute:cardCornerRadius="3dp">
 
@@ -167,7 +167,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="Diagonalify"
+                            android:text="Crescento"
                             android:textColor="#212121"/>
 
                         <TextView
@@ -175,7 +175,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
                             android:textColor="#AA212121"
-                            android:text="Create super easy diagonal cut on image view"/>
+                            android:text="Add curve at bottom of image view"/>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -183,7 +183,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:elevation="10dp"
+                android:elevation="5dp"
                 android:layout_margin="8dp"
                 attribute:cardCornerRadius="3dp">
 
@@ -224,7 +224,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:elevation="10dp"
+                android:elevation="5dp"
                 android:layout_margin="8dp"
                 attribute:cardCornerRadius="3dp">
 
@@ -265,7 +265,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:elevation="10dp"
+                android:elevation="5dp"
                 android:layout_margin="8dp"
                 attribute:cardCornerRadius="3dp">
 
