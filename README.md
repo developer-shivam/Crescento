@@ -98,5 +98,5 @@ Question / Contact Me
 Please feel free to ping me at **dr.droid27@gmail.com**
 
 [SampleOne]:		/art/sample1_resize.png
-[GifSample]:        /art/sample.gif
+[GifSample]:        /art/sample2.gif
 [KenBurnsView]:		https://github.com/flavioarfaria/KenBurnsView
