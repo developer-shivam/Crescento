@@ -87,8 +87,8 @@ public class CrescentoImageView extends ImageView {
         mOutlinePath = new Path();
 
         TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_crescent)) {
-            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_crescent, getDpForPixel(curvatureHeight));
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_curvature)) {
+            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_curvature, getDpForPixel(curvatureHeight));
         }
 
         if (styledAttributes.hasValue(R.styleable.CrescentoImageView_tintAlpha)) {
@@ -153,7 +153,14 @@ public class CrescentoImageView extends ImageView {
                 if (tintMode == TintMode.AUTOMATIC) {
                     int defaultColor = 0x000000;
                     tintPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                    tintPaint.setColor(Color.parseColor("#" + palette.getVibrantColor(defaultColor)));
+                    if (palette.getDarkVibrantColor(defaultColor) != 0) {
+                        tintPaint.setColor(Color.parseColor("#" + Math.abs(palette.getDarkVibrantColor(defaultColor))));
+                    } else if (palette.getDarkMutedColor(defaultColor) != 0) {
+                        System.out.println(palette.getMutedColor(defaultColor));
+                        tintPaint.setColor(Color.parseColor("#" + Math.abs(palette.getDarkMutedColor(defaultColor))));
+                    } else {
+                        tintPaint.setColor(Color.WHITE);
+                    }
                     tintPaint.setAlpha(tintAmount);
                 } else {
                     tintPaint = new Paint(Paint.ANTI_ALIAS_FLAG);

@@ -3,6 +3,7 @@ package developer.shivam.library;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Outline;
@@ -10,16 +11,19 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
+import android.support.v7.graphics.Palette;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
-public class CrescentoContainer extends FrameLayout {
+public class CrescentoContainer extends RelativeLayout {
 
     Context mContext;
 
@@ -36,6 +40,7 @@ public class CrescentoContainer extends FrameLayout {
 
     Paint mPaint;
     private PorterDuffXfermode porterDuffXfermode;
+    private String TAG = "CRESCENTO_IMAGE_VIEW";
 
     public CrescentoContainer(Context context) {
         super(context);
@@ -53,14 +58,14 @@ public class CrescentoContainer extends FrameLayout {
         porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.CLEAR);
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(Color.BLACK);
+        mPaint.setColor(Color.WHITE);
 
         mClipPath = new Path();
         mOutlinePath = new Path();
 
         TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_crescent)) {
-            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_crescent, getDpForPixel(curvatureHeight));
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_curvature)) {
+            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_curvature, getDpForPixel(curvatureHeight));
         }
 
         styledAttributes.recycle();
@@ -82,7 +87,7 @@ public class CrescentoContainer extends FrameLayout {
             try {
                 setOutlineProvider(getOutlineProvider());
             } catch (Exception e) {
-                Log.d("Outline path", e.getMessage());
+                Log.d(TAG, e.getMessage());
             }
         }
     }
