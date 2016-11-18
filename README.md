@@ -14,5 +14,5 @@ Overview
 * **Tint**: It add tint on **CrescentoImageView** by using **attribute:tintColor**. It pick color automatically from the image if **tintMode** is set to **automatic**.
 
 
-[SampleOne]:   /art/sample1_min.png
-[SampleTwo]:   /art/sample3_min.png
+[SampleOne]:   /art/sample1_resize.png
+[SampleTwo]:   /art/sample3_resize.png
