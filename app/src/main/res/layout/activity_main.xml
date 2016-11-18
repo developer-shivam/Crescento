@@ -15,19 +15,19 @@
         android:scaleType="centerCrop"
         attribute:curvature="50dp">
 
-        <ImageView
+        <com.flaviofaria.kenburnsview.KenBurnsView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@color/colorPrimary" />
+            android:src="@drawable/wallpaper1" />
 
         <android.support.v7.widget.CardView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:elevation="10dp"
-            attribute:cardBackgroundColor="@color/colorPrimaryDark"
+            attribute:cardBackgroundColor="@color/colorPrimary"
             attribute:cardCornerRadius="40dp">
 
             <RelativeLayout
@@ -62,7 +62,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:src="@drawable/photo1"
             attribute:civ_border_color="#ffffff"
             attribute:civ_border_width="5dp" />
@@ -94,9 +94,9 @@
             android:layout_height="80dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:elevation="10dp"
-            attribute:cardBackgroundColor="@color/colorPrimaryDark"
+            attribute:cardBackgroundColor="@color/colorPrimary"
             attribute:cardCornerRadius="40dp">
 
             <RelativeLayout

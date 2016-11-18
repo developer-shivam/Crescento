@@ -199,4 +199,24 @@ public class CrescentoImageView extends ImageView {
     private int getDpForPixel (int pixel) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pixel, mContext.getResources().getDisplayMetrics());
     }
+
+    /**
+     * Getter for attributes
+     */
+
+    public void setCurvature(int height) {
+        curvatureHeight = getDpForPixel(height);
+    }
+
+    public void setTintColor(int tintColor) {
+        this.tintColor = tintColor;
+    }
+
+    public void setTintMode(int tintMode) {
+        this.tintMode = tintMode;
+    }
+
+    public void setTintAmount(int tintAmount) {
+        this.tintAmount = tintAmount;
+    }
 }
