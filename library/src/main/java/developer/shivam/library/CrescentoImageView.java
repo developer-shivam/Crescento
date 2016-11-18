@@ -34,7 +34,7 @@ public class CrescentoImageView extends ImageView {
 
     Bitmap mBitmap;
 
-    Paint tintColor;
+    Paint tintPaint;
 
     /**
      * @param curvatureHeight changes the amount of curve. Default is 50.
@@ -50,6 +50,11 @@ public class CrescentoImageView extends ImageView {
      * @param tintMode whether manual or automatic. Default is TintMode.AUTOMATIC.
      */
     int tintMode = TintMode.AUTOMATIC;
+
+    /**
+     * @param tintPaint color of tint to be applied
+     */
+    int tintColor = 0;
 
     static public class TintMode {
         static int AUTOMATIC = 0;
@@ -86,8 +91,38 @@ public class CrescentoImageView extends ImageView {
             curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_crescent, getDpForPixel(curvatureHeight));
         }
 
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_tintAlpha)) {
+            if (styledAttributes.getInt(R.styleable.CrescentoImageView_tintAlpha, 0) <= 255
+                    && styledAttributes.getInt(R.styleable.CrescentoImageView_tintAlpha, 0) >= 0) {
+                tintAmount = styledAttributes.getInt(R.styleable.CrescentoImageView_tintAlpha, 0);
+            }
+        }
+
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_tintMode)) {
+            if (styledAttributes.getInt(R.styleable.CrescentoImageView_tintMode, 0) == TintMode.AUTOMATIC) {
+                tintMode = TintMode.AUTOMATIC;
+            } else {
+                tintMode = TintMode.MANUAL;
+            }
+        }
+
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_tintColor)) {
+            tintColor = styledAttributes.getColor(R.styleable.CrescentoImageView_tintColor, 0);
+        }
 
         styledAttributes.recycle();
+
+        if (getDrawable() != null) {
+            BitmapDrawable mBitmapDrawable = (BitmapDrawable) getDrawable();
+            mBitmap = mBitmapDrawable.getBitmap();
+            pickColorFromBitmap(mBitmap);
+        } else {
+            if (getBackground() != null) {
+                BitmapDrawable mBitmapDrawable = (BitmapDrawable) getBackground();
+                mBitmap = mBitmapDrawable.getBitmap();
+                pickColorFromBitmap(mBitmap);
+            }
+        }
     }
 
     @Override
@@ -109,28 +144,22 @@ public class CrescentoImageView extends ImageView {
                 Log.d(TAG, e.getMessage());
             }
         }
-
-        if (getDrawable() != null) {
-            BitmapDrawable mBitmapDrawable = (BitmapDrawable) getDrawable();
-            mBitmap = mBitmapDrawable.getBitmap();
-            pickColorFromBitmap(mBitmap);
-        } else {
-            if (getBackground() != null) {
-                BitmapDrawable mBitmapDrawable = (BitmapDrawable) getBackground();
-                mBitmap = mBitmapDrawable.getBitmap();
-                pickColorFromBitmap(mBitmap);
-            }
-        }
     }
 
     private void pickColorFromBitmap(Bitmap bitmap) {
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
             @Override
             public void onGenerated(Palette palette) {
-                int defaultColor = 0x000000;
-                tintColor = new Paint(Paint.ANTI_ALIAS_FLAG);
-                tintColor.setColor(Color.parseColor("#" + palette.getVibrantColor(defaultColor)));
-                tintColor.setAlpha(130);
+                if (tintMode == TintMode.AUTOMATIC) {
+                    int defaultColor = 0x000000;
+                    tintPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                    tintPaint.setColor(Color.parseColor("#" + palette.getVibrantColor(defaultColor)));
+                    tintPaint.setAlpha(tintAmount);
+                } else {
+                    tintPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                    tintPaint.setColor(tintColor);
+                    tintPaint.setAlpha(tintAmount);
+                }
             }
         });
     }
@@ -152,8 +181,10 @@ public class CrescentoImageView extends ImageView {
         int saveCount = canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
         super.onDraw(canvas);
         mPaint.setXfermode(porterDuffXfermode);
+        if (tintPaint != null) {
+            canvas.drawColor(tintPaint.getColor());
+        }
         canvas.drawPath(mClipPath, mPaint);
-        canvas.drawPath(mClipPath, tintColor);
         canvas.restoreToCount(saveCount);
         mPaint.setXfermode(null);
     }

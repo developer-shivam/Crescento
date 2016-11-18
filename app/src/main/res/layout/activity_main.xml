@@ -14,7 +14,9 @@
         android:scaleType="centerCrop"
         android:elevation="20dp"
         attribute:crescent="40dp"
-        attribute:tintMode="automatic"
+        attribute:tintMode="manual"
+        attribute:tintColor="#ffffff"
+        attribute:tintAlpha="100"
         android:src="@drawable/wallpaper"/>
 
 </RelativeLayout>
