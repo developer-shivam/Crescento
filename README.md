@@ -16,6 +16,9 @@ Overview
 
 Use with **[KenBurnsView]**
 ---------------------------------------
+
+![Sample Image 2][GifSample]
+
 ```java
 <developer.shivam.library.CrescentoContainer android:id="@+id/crescentoContainer"
         android:layout_width="match_parent"
@@ -95,5 +98,5 @@ Question / Contact Me
 Please feel free to ping me at **dr.droid27@gmail.com**
 
 [SampleOne]:		/art/sample1_resize.png
-[SampleTwo]:   		/art/sample3_resize.png
+[GifSample]:        /art/sample.gif
 [KenBurnsView]:		https://github.com/flavioarfaria/KenBurnsView
