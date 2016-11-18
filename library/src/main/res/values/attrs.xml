@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CrescentoImageView">
-        <attr name="crescent" format="dimension" />
+        <attr name="crescent" format="dimension"/>
+        <attr name="tintMode" format="integer">
+            <flag name="automatic" value="0"/>
+            <flag name="manual" value="1"/>
+        </attr>
+        <attr name="tintColor" format="color"/>
+        <attr name="tintAlpha" format="integer"/>
     </declare-styleable>
 </resources>

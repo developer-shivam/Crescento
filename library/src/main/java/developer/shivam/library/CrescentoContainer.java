@@ -93,7 +93,7 @@ public class CrescentoContainer extends FrameLayout {
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
-                outline.setConvexPath(PathProvider.getOutlinePath(view, width, height, curvatureHeight,
+                outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight,
                         getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
             }
         };

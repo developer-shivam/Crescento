@@ -3,6 +3,7 @@ package developer.shivam.library;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Outline;
@@ -10,8 +11,10 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
+import android.support.v7.graphics.Palette;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -29,13 +32,33 @@ public class CrescentoImageView extends ImageView {
     int width = 0;
     int height = 0;
 
+    Bitmap mBitmap;
+
+    Paint tintColor;
+
     /**
      * @param curvatureHeight changes the amount of curve. Default is 50.
      */
     int curvatureHeight = 50;
 
+    /**
+     * @param tintAmount varies from 0-255
+     */
+    int tintAmount = 0;
+
+    /**
+     * @param tintMode whether manual or automatic. Default is TintMode.AUTOMATIC.
+     */
+    int tintMode = TintMode.AUTOMATIC;
+
+    static public class TintMode {
+        static int AUTOMATIC = 0;
+        static int MANUAL = 1;
+    }
+
     Paint mPaint;
     private PorterDuffXfermode porterDuffXfermode;
+    private String TAG = "CRESCENTO_IMAGE_VIEW";
 
     public CrescentoImageView(Context context) {
         super(context);
@@ -63,6 +86,7 @@ public class CrescentoImageView extends ImageView {
             curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_crescent, getDpForPixel(curvatureHeight));
         }
 
+
         styledAttributes.recycle();
     }
 
@@ -82,9 +106,33 @@ public class CrescentoImageView extends ImageView {
             try {
                 setOutlineProvider(getOutlineProvider());
             } catch (Exception e) {
-                Log.d("Outline path", e.getMessage());
+                Log.d(TAG, e.getMessage());
             }
         }
+
+        if (getDrawable() != null) {
+            BitmapDrawable mBitmapDrawable = (BitmapDrawable) getDrawable();
+            mBitmap = mBitmapDrawable.getBitmap();
+            pickColorFromBitmap(mBitmap);
+        } else {
+            if (getBackground() != null) {
+                BitmapDrawable mBitmapDrawable = (BitmapDrawable) getBackground();
+                mBitmap = mBitmapDrawable.getBitmap();
+                pickColorFromBitmap(mBitmap);
+            }
+        }
+    }
+
+    private void pickColorFromBitmap(Bitmap bitmap) {
+        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
+            @Override
+            public void onGenerated(Palette palette) {
+                int defaultColor = 0x000000;
+                tintColor = new Paint(Paint.ANTI_ALIAS_FLAG);
+                tintColor.setColor(Color.parseColor("#" + palette.getVibrantColor(defaultColor)));
+                tintColor.setAlpha(130);
+            }
+        });
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -93,7 +141,7 @@ public class CrescentoImageView extends ImageView {
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
-                outline.setConvexPath(PathProvider.getOutlinePath(view, width, height, curvatureHeight,
+                outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight,
                         getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
             }
         };
@@ -105,6 +153,7 @@ public class CrescentoImageView extends ImageView {
         super.onDraw(canvas);
         mPaint.setXfermode(porterDuffXfermode);
         canvas.drawPath(mClipPath, mPaint);
+        canvas.drawPath(mClipPath, tintColor);
         canvas.restoreToCount(saveCount);
         mPaint.setXfermode(null);
     }
