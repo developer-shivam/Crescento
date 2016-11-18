@@ -15,10 +15,10 @@
         android:scaleType="centerCrop"
         attribute:curvature="50dp">
 
-        <ImageView
+        <com.flaviofaria.kenburnsview.KenBurnsView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@color/colorPrimary" />
+            android:src="@drawable/wallpaper2" />
 
         <android.support.v7.widget.CardView
             android:layout_width="80dp"
@@ -135,15 +135,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:elevation="10dp"
-                android:layout_margin="5dp"
+                android:layout_margin="8dp"
                 attribute:cardCornerRadius="3dp">
 
                 <LinearLayout
@@ -184,7 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:elevation="10dp"
-                android:layout_margin="5dp"
+                android:layout_margin="8dp"
                 attribute:cardCornerRadius="3dp">
 
                 <LinearLayout
@@ -216,7 +216,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
                             android:textColor="#AA212121"
-                            android:text="Generate Sine waves"/>
+                            android:text="Generate sine waves"/>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -225,7 +225,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:elevation="10dp"
-                android:layout_margin="5dp"
+                android:layout_margin="8dp"
                 attribute:cardCornerRadius="3dp">
 
                 <LinearLayout
@@ -266,7 +266,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:elevation="10dp"
-                android:layout_margin="5dp"
+                android:layout_margin="8dp"
                 attribute:cardCornerRadius="3dp">
 
                 <LinearLayout
