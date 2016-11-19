@@ -115,6 +115,13 @@ Question / Contact Me / Hire Me
 ---------------------
 Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be 12 lpa.
 
+License
+-------
+
+Copyright (c) 2016 Shivam Satija
+
+Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 [SampleOne]:		 	/art/sample1_resize.png
 [SampleOneNexus]: 	 	/art/sample1_nexus4_angle1.png
 [GifSample]:         	/art/sample2.gif
