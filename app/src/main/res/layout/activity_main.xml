@@ -63,7 +63,6 @@
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:src="@drawable/photo1"
             attribute:civ_border_color="#ffffff"
             attribute:civ_border_width="5dp" />
 
