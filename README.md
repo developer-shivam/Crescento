@@ -113,7 +113,7 @@ Attributes
 
 Question / Contact Me / Hire Me
 ---------------------
-Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be 6 lpa.
+Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be 12 lpa.
 
 [SampleOne]:		 	/art/sample1_resize.png
 [SampleOneNexus]: 	 	/art/sample1_nexus4_angle1.png
