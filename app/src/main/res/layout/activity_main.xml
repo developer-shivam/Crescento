@@ -18,14 +18,14 @@
         <com.flaviofaria.kenburnsview.KenBurnsView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/wallpaper1" />
+            android:src="@drawable/wallpaper3_optimized" />
 
         <android.support.v7.widget.CardView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="80dp"
             android:elevation="10dp"
             attribute:cardBackgroundColor="@color/colorPrimary"
             attribute:cardCornerRadius="40dp">
@@ -94,7 +94,7 @@
             android:layout_height="80dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="80dp"
             android:elevation="10dp"
             attribute:cardBackgroundColor="@color/colorPrimary"
             attribute:cardCornerRadius="40dp">
