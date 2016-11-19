@@ -14,6 +14,8 @@ Overview
 * **Tint**: It add tint on **CrescentoImageView** by using **attribute:tintColor**. It pick color automatically from the image if **tintMode** is set to **automatic**.
 * **Alpha**: Add transparency in tint by using **attribute:tintAlpha**. Varies from 0 to 255.
 
+**[Demo]** 
+
 Use with **[KenBurnsView]**
 ---------------------------------------
 
@@ -124,4 +126,5 @@ Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would 
 [Donate $50]: 	https://www.paypal.me/developerShivam/50
 [Donate $100]: 	https://www.paypal.me/developerShivam/100
 [Donate $2799]: https://www.paypal.me/developerShivam/2799
+[Demo]:			
 [KenBurnsView]:			https://github.com/flavioarfaria/KenBurnsView
