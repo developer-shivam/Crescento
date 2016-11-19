@@ -41,12 +41,12 @@ This project needs you! If you would like to support this project's further deve
 
 **PayPal**
 
-* Donate 5 $: Thank's for creating this project, here's a coffee (or some beer) for you!
-* Donate 10 $: Wow, I am stunned. Let me take you to the movies!
-* Donate 15 $: I really appreciate your work, let's grab some lunch!
-* Donate 25 $: That's some awesome stuff you did right there, dinner is on me!
-* Donate 50 $: I really really want to support this project, great job!
-* Donate 100 $: You are the man! This project saved me hours (if not days) of struggle and hard work, simply awesome!
+* **[Donate $5]**: Thank's for creating this project, here's a coffee (or some beer) for you!
+* **[Donate $10]**: Wow, I am stunned. Let me take you to the movies!
+* **[Donate $15]**: I really appreciate your work, let's grab some lunch!
+* **[Donate $25]**: That's some awesome stuff you did right there, dinner is on me!
+* **[Donate $50]**: I really really want to support this project, great job!
+* **[Donate $100]**: You are the man! This project saved me hours (if not days) of struggle and hard work, simply awesome!
 Of course, you can also choose what you want to donate, all donations are awesome!
 
 Gradle Integration
@@ -112,8 +112,14 @@ Question / Contact Me / Hire Me
 ---------------------
 Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be 6 lpa.
 
-[SampleOne]:		/art/sample1_resize.png
-[SampleOneNexus]: 	/art/sample1_nexus4_angle1.png
-[GifSample]:        /art/sample2.gif
-[GifSample2]:		/art/sample3.gif
-[KenBurnsView]:		https://github.com/flavioarfaria/KenBurnsView
+[SampleOne]:		 	/art/sample1_resize.png
+[SampleOneNexus]: 	 	/art/sample1_nexus4_angle1.png
+[GifSample]:         	/art/sample2.gif
+[GifSample2]:		 	/art/sample3.gif
+[Donate $5]: 	 	https://www.paypal.me/developerShivam/5
+[Donate $10]:  	https://www.paypal.me/developerShivam/10
+[Donate $15]:  	https://www.paypal.me/developerShivam/15
+[Donate $25]:  	https://www.paypal.me/developerShivam/25
+[Donate $50]: 	https://www.paypal.me/developerShivam/50
+[Donate $100]: 	https://www.paypal.me/developerShivam/100
+[KenBurnsView]:			https://github.com/flavioarfaria/KenBurnsView
