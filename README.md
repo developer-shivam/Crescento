@@ -3,7 +3,7 @@ Crescento
 
 Android library that adds a curve at the below of image views and relative layouts. **CrescentoImageView** and **CrescentoContainer** are the image view and relative layout respectively. You can change the radius of curve with **attribute:curvature**.
 
-![Sample Image 1][SampleOne]
+![Sample Image 1][GifSample]	![Sample Image 2][SampleOne]
 
 Overview
 --------
@@ -17,7 +17,7 @@ Overview
 Use with **[KenBurnsView]**
 ---------------------------------------
 
-![Sample Image 2][GifSample]
+![Sample Image 2][GifSample2]
 
 ```java
 <developer.shivam.library.CrescentoContainer android:id="@+id/crescentoContainer"
@@ -114,4 +114,5 @@ Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would 
 
 [SampleOne]:		/art/sample1_resize.png
 [GifSample]:        /art/sample2.gif
+[GifSample2]:		/art/sample3.gif
 [KenBurnsView]:		https://github.com/flavioarfaria/KenBurnsView
