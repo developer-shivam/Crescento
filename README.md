@@ -1,9 +1,9 @@
 Crescento
 =========
 
-![Sample Image 2][SampleOneNexus]
-
 Android library that adds a curve at the below of image views and relative layouts. **CrescentoImageView** and **CrescentoContainer** are the image view and relative layout respectively. You can change the radius of curve with **attribute:curvature**.	
+
+![Sample Image 2][SampleOneNexus]
 
 Overview
 --------
