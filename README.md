@@ -14,7 +14,7 @@ Overview
 * **Tint**: It add tint on **CrescentoImageView** by using **attribute:tintColor**. It pick color automatically from the image if **tintMode** is set to **automatic**.
 * **Alpha**: Add transparency in tint by using **attribute:tintAlpha**. Varies from 0 to 255.
 
-**[Demo]** 
+**[Sample Apk]** 
 
 Use with **[KenBurnsView]**
 ---------------------------------------
@@ -51,6 +51,15 @@ This project needs you! If you would like to support this project's further deve
 * **[Donate $100]**: You are the man! This project saved me hours (if not days) of struggle and hard work, simply awesome!
 * **[Donate $2799]**: Go buddy, buy Macbook Pro for yourself!
 Of course, you can also choose what you want to donate, all donations are awesome!
+
+Demo
+----
+
+Here is a very good example of how to use `Crescento`. **Zsolt Szilvai** has designed a very good design and I have illustrated using crescento.
+
+https://material.uplabs.com/posts/cinema-application-interface
+
+[SampleTwo]
 
 Gradle Integration
 ------------------
@@ -118,20 +127,39 @@ Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would 
 License
 -------
 
+MIT License
+
 Copyright (c) 2016 Shivam Satija
 
-Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [SampleOne]:		 	/art/sample1_resize.png
+[SampleTwo]:			/art/sample2.png
 [SampleOneNexus]: 	 	/art/sample1_nexus4_angle1.png
 [GifSample]:         	/art/sample2.gif
 [GifSample2]:		 	/art/sample3.gif
-[Donate $5]: 	 	https://www.paypal.me/developerShivam/5
-[Donate $10]:  	https://www.paypal.me/developerShivam/10
-[Donate $15]:  	https://www.paypal.me/developerShivam/15
-[Donate $25]:  	https://www.paypal.me/developerShivam/25
-[Donate $50]: 	https://www.paypal.me/developerShivam/50
-[Donate $100]: 	https://www.paypal.me/developerShivam/100
-[Donate $2799]: https://www.paypal.me/developerShivam/2799
-[Demo]:			https://github.com/developer-shivam/crescento/blob/master/demo.apk
-[KenBurnsView]:	https://github.com/flavioarfaria/KenBurnsView
+[Donate $5]: 		https://www.paypal.me/developerShivam/5
+[Donate $10]:  		https://www.paypal.me/developerShivam/10
+[Donate $15]:  		https://www.paypal.me/developerShivam/15
+[Donate $25]:  		https://www.paypal.me/developerShivam/25
+[Donate $50]: 		https://www.paypal.me/developerShivam/50
+[Donate $100]: 		https://www.paypal.me/developerShivam/100
+[Donate $2799]: 	https://www.paypal.me/developerShivam/2799
+[Sample Apk]:		https://github.com/developer-shivam/crescento/blob/master/demo.apk
+[KenBurnsView]:		https://github.com/flavioarfaria/KenBurnsView
