@@ -55,7 +55,7 @@ Of course, you can also choose what you want to donate, all donations are awesom
 Demo
 ----
 
-Here is a very good example of how to use `Crescento`. **Zsolt Szilvai** has designed a very good design and I have illustrated using crescento.
+Here is a very good example of how to use `Crescento`. **Zsolt Szilvai** has made a very good design and I've illustrated using crescento.
 
 https://material.uplabs.com/posts/cinema-application-interface
 
@@ -124,8 +124,7 @@ Question / Contact Me / Hire Me
 ---------------------
 Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be 12 lpa.
 
-License
--------
+#License
 
 MIT License
 
