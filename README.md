@@ -59,7 +59,7 @@ Here is a very good example of how to use `Crescento`. **Zsolt Szilvai** has des
 
 https://material.uplabs.com/posts/cinema-application-interface
 
-[SampleTwo]
+![Sample of Zsolt Szilvai's design][SampleTwo]
 
 Gradle Integration
 ------------------
