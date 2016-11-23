@@ -153,7 +153,7 @@ SOFTWARE.
 
 [SampleOne]:		 	/art/sample1_resize.png
 [SampleTwo]:			/art/sample2.png
-[SampleOneNexus]: 	 	/art/sample1_nexus4_portrait.png
+[SampleOneNexus]: 	 	/art/sample_image.png
 [GifSample]:         	/art/sample2.gif
 [GifSample2]:		 	/art/sample3.gif
 [Donate $5]: 		https://www.paypal.me/developerShivam/5
