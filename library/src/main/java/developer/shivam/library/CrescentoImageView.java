@@ -11,6 +11,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
@@ -81,7 +82,7 @@ public class CrescentoImageView extends ImageView {
         porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.CLEAR);
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(Color.BLACK);
+        mPaint.setColor(Color.WHITE);
 
         mClipPath = new Path();
         mOutlinePath = new Path();
@@ -191,6 +192,11 @@ public class CrescentoImageView extends ImageView {
         if (tintPaint != null) {
             canvas.drawColor(tintPaint.getColor());
         }
+        Shader mShader = GradientProvider.getShader(canvas.getHeight());
+        Paint paint = new Paint();
+        paint.setShader(mShader);
+        canvas.drawPaint(paint);
+
         canvas.drawPath(mClipPath, mPaint);
         canvas.restoreToCount(saveCount);
         mPaint.setXfermode(null);
