@@ -124,8 +124,10 @@ Question / Contact Me / Hire Me
 ---------------------
 Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be 12 lpa.
 
-#License
+License
+-------
 
+```
 MIT License
 
 Copyright (c) 2016 Shivam Satija
@@ -147,10 +149,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
 
 [SampleOne]:		 	/art/sample1_resize.png
 [SampleTwo]:			/art/sample2.png
-[SampleOneNexus]: 	 	/art/sample1_nexus4_angle1.png
+[SampleOneNexus]: 	 	/art/sample1_nexus4_portrait.png
 [GifSample]:         	/art/sample2.gif
 [GifSample2]:		 	/art/sample3.gif
 [Donate $5]: 		https://www.paypal.me/developerShivam/5
