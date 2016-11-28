@@ -15,15 +15,15 @@ public class SampleOneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample_one);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("Rogue One: A Star Wars Story");
+        //mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        //mToolbar.setTitle("Rogue One: A Star Wars Story");
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.parseColor("#455A64"));
+            getWindow().setStatusBarColor(Color.parseColor("#000000"));
         }
     }
 }
