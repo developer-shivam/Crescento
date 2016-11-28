@@ -13,9 +13,10 @@
         android:scaleType="centerCrop"
         android:src="@drawable/wallpaper3_optimized"
         app:curvature="40dp"
-        app:gradientDirection="top_to_bottom"
+        app:gradientDirection="bottom_to_top"
         app:gradientStartColor="#00000000"
-        app:gradientEndColor="#AA000000"/>
+        app:gradientEndColor="#FF5722"
+        app:curvatureDirection="inward"/>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -36,6 +37,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="STORY"
         android:textColor="#212121" />
 
@@ -47,6 +49,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="The Rebellion makes a risky move to steal the plans to the Death Star. Setting up the epic saga to follow."
         android:textColor="#848484"
         android:textSize="13sp" />

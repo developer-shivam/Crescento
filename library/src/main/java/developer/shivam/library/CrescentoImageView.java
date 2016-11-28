@@ -62,7 +62,7 @@ public class CrescentoImageView extends ImageView {
     int gradientStartColor = Color.TRANSPARENT;
     int gradientEndColor = Color.TRANSPARENT;
 
-    int curvatureDirection = 0;
+    int curvatureDirection = CurvatureDirection.OUTWARD;
 
     static public class TintMode {
         static final int AUTOMATIC = 0;
@@ -141,7 +141,7 @@ public class CrescentoImageView extends ImageView {
         }
 
         /* Default curvature direction would be outward*/
-        curvatureDirection = styledAttributes.getInt(R.styleable.CrescentoImageView_gradientDirection, 0);
+        curvatureDirection = styledAttributes.getInt(R.styleable.CrescentoImageView_curvatureDirection, 0);
 
         styledAttributes.recycle();
 
@@ -243,10 +243,7 @@ public class CrescentoImageView extends ImageView {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pixel, mContext.getResources().getDisplayMetrics());
     }
 
-    /**
-     * Getter for attributes
-     */
-
+    /* Getter for attributes */
     public void setCurvature(int height) {
         curvatureHeight = getDpForPixel(height);
     }
@@ -273,5 +270,9 @@ public class CrescentoImageView extends ImageView {
 
     public void setGradientEndColor(int endColor) {
         this.gradientEndColor = endColor;
+    }
+
+    public void setCurvatureDirection(int direction) {
+        this.curvatureDirection = direction;
     }
 }
