@@ -21,7 +21,7 @@ class PathProvider {
             mPath.close();
         } else {
             mPath.moveTo(paddingLeft, paddingTop);
-            mPath.lineTo(paddingLeft, height - curvatureHeight - paddingBottom);
+            mPath.lineTo(paddingLeft, height - paddingBottom);
             mPath.cubicTo(paddingLeft, height - paddingBottom,
                     width / 2 - paddingRight, height - curvatureHeight - paddingBottom,
                     width - paddingRight, height - paddingBottom);
@@ -56,7 +56,7 @@ class PathProvider {
         } else {
             mPath.moveTo(0, 0);
             mPath.lineTo(paddingLeft, paddingTop);
-            mPath.lineTo(paddingLeft, height - curvatureHeight - paddingBottom);
+            mPath.lineTo(paddingLeft, height - paddingBottom);
             mPath.cubicTo(paddingLeft, height - paddingBottom,
                     width / 2 - paddingRight, height - curvatureHeight - paddingBottom,
                     width - paddingRight, height - paddingBottom);
