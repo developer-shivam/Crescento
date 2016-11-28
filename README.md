@@ -3,6 +3,11 @@ Crescento
 
 Android library that adds a curve at the below of image views and relative layouts. **CrescentoImageView** and **CrescentoContainer** are the image view and relative layout respectively. You can change the radius of curve with **attribute:curvature**.	
 
+[![API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=11)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Crescento-green.svg?style=true)](https://android-arsenal.com/details/1/4684)
+[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23232-blue.svg)](http://androidweekly.net/issues/issue-232)
+[![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23119-blue.svg)](https://www.androiddevdigest.com/digest-119/)
+
 ![Sample Image 2][SampleOneNexus]
 
 Overview
@@ -13,6 +18,7 @@ Overview
 * **Curve Bottom**: It adds a curve bottom as stated above. 
 * **Tint**: It add tint on **CrescentoImageView** by using **attribute:tintColor**. It pick color automatically from the image if **tintMode** is set to **automatic**.
 * **Alpha**: Add transparency in tint by using **attribute:tintAlpha**. Varies from 0 to 255.
+* **Gradient** : Add gradient on the imageview.
 
 **[Sample Apk]** 
 
@@ -76,7 +82,7 @@ If you are using gradle then add these lines in build.gradle file at project lev
 
 Add below lines in build.gradle at app level.
 ```java
-	compile 'com.github.developer-shivam:crescento:1.0.0'
+	compile 'com.github.developer-shivam:crescento:1.0.1'
 ```
 
 Basic Usage
@@ -116,13 +122,18 @@ Attributes
 ----------
 
 * **curvature**: To change the size of curve.
+* **curvatureDirection** : To change the direction of curvature. Whether **inward** or **outward**.
 * **tintColor**: To add tint on image view.
 * **tintMode**: To add tint **manually** or **automatically**. If **automatically** it will pick color from image you have set.
 * **tintAlpha**: To set the amount of tint. 0 for 100% transparent and 255 for opaque.
+* **gradientDirection** : To set the direction of gradient. Supported direction are **TOP_TO_BOTTOM**, **BOTTOM_TO_TOP**, **LEFT_TO_RIGHT** and **RIGHT_TO_LEFT**.
+* **gradientStartColor** : gradient start color.
+* **gradientEndColor** : gradient end color.
+ 
 
 Question / Contact Me / Hire Me
 ---------------------
-Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be 12 lpa.
+Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be **12 lpa**.
 
 License
 -------
