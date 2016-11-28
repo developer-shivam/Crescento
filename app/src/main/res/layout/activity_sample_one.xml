@@ -5,54 +5,50 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#607D8B"
-        android:layout_alignParentTop="true"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
-
-    <developer.shivam.library.CrescentoImageView android:id="@+id/crescentoImageView"
+    <developer.shivam.library.CrescentoImageView
+        android:id="@+id/crescentoImageView"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:src="@drawable/rogue"
-        android:scaleType="centerCrop"
         android:elevation="5dp"
-        android:layout_below="@id/toolbar"
-        app:curvature="40dp" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/wallpaper3_optimized"
+        app:curvature="40dp"
+        app:gradientDirection="top_to_bottom"
+        app:gradientStartColor="#00000000"
+        app:gradientEndColor="#AA000000"/>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_add_white_24dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="120dp"
         android:layout_alignParentRight="true"
+        android:layout_marginBottom="160dp"
         android:layout_marginRight="40dp"
+        android:src="@drawable/ic_add_white_24dp"
         app:backgroundTint="#ff5722"
-        app:elevation="10dp"/>
+        app:elevation="10dp" />
 
-    <TextView android:id="@+id/tvStory"
+    <TextView
+        android:id="@+id/tvStory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/crescentoImageView"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:textColor="#212121"
-        android:text="STORY"/>
+        android:text="STORY"
+        android:textColor="#212121" />
 
-    <TextView android:id="@+id/tvStoryLine"
+    <TextView
+        android:id="@+id/tvStoryLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvStory"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:text="The Rebellion makes a risky move to steal the plans to the Death Star. Setting up the epic saga to follow."
         android:textColor="#848484"
-        android:textSize="13sp"
-        android:text="The Rebellion makes a risky move to steal the plans to the Death Star. Setting up the epic saga to follow."/>
+        android:textSize="13sp" />
 
 </RelativeLayout>

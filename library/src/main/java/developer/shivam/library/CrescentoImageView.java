@@ -57,9 +57,28 @@ public class CrescentoImageView extends ImageView {
      */
     int tintColor = 0;
 
+    int gradientDirection = 0;
+
+    int gradientStartColor = Color.TRANSPARENT;
+    int gradientEndColor = Color.TRANSPARENT;
+
+    int curvatureDirection = 0;
+
     static public class TintMode {
-        static int AUTOMATIC = 0;
-        static int MANUAL = 1;
+        static final int AUTOMATIC = 0;
+        static final int MANUAL = 1;
+    }
+
+    static public class Gradient {
+        static final int TOP_TO_BOTTOM = 0;
+        static final int BOTTOM_TO_TOP = 1;
+        static final int LEFT_TO_RIGHT = 2;
+        static final int RIGHT_TO_LEFT = 3;
+    }
+
+    static public class CurvatureDirection {
+        static final int OUTWARD = 0;
+        static final int INWARD = 1;
     }
 
     Paint mPaint;
@@ -107,9 +126,22 @@ public class CrescentoImageView extends ImageView {
             }
         }
 
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_gradientDirection)) {
+            gradientDirection = styledAttributes.getInt(R.styleable.CrescentoImageView_gradientDirection, 0);
+        }
+
+        /* Default start color is transparent*/
+        gradientStartColor = styledAttributes.getColor(R.styleable.CrescentoImageView_gradientStartColor, Color.TRANSPARENT);
+
+        /* Default end color is transparent*/
+        gradientEndColor = styledAttributes.getColor(R.styleable.CrescentoImageView_gradientEndColor, Color.TRANSPARENT);
+
         if (styledAttributes.hasValue(R.styleable.CrescentoImageView_tintColor)) {
             tintColor = styledAttributes.getColor(R.styleable.CrescentoImageView_tintColor, 0);
         }
+
+        /* Default curvature direction would be outward*/
+        curvatureDirection = styledAttributes.getInt(R.styleable.CrescentoImageView_gradientDirection, 0);
 
         styledAttributes.recycle();
 
@@ -133,7 +165,7 @@ public class CrescentoImageView extends ImageView {
         width = getMeasuredWidth();
         height = getMeasuredHeight();
 
-        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight,
+        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight, curvatureDirection,
                 getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight());
 
         ViewCompat.setElevation(this, ViewCompat.getElevation(this));
@@ -178,8 +210,12 @@ public class CrescentoImageView extends ImageView {
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
-                outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight,
-                        getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
+                try {
+                    outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, curvatureDirection,
+                            getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
+                } catch (Exception e) {
+                    Log.d("Outline Path", e.getMessage());
+                }
             }
         };
     }
@@ -192,7 +228,8 @@ public class CrescentoImageView extends ImageView {
         if (tintPaint != null) {
             canvas.drawColor(tintPaint.getColor());
         }
-        Shader mShader = GradientProvider.getShader(canvas.getHeight());
+
+        Shader mShader = GradientProvider.getShader(gradientStartColor, gradientEndColor, gradientDirection, canvas.getWidth(), canvas.getHeight());
         Paint paint = new Paint();
         paint.setShader(mShader);
         canvas.drawPaint(paint);
@@ -224,5 +261,17 @@ public class CrescentoImageView extends ImageView {
 
     public void setTintAmount(int tintAmount) {
         this.tintAmount = tintAmount;
+    }
+
+    public void setGradientDirection(int direction) {
+        this.gradientDirection = direction;
+    }
+
+    public void setGradientStartColor(int startColor) {
+        this.gradientStartColor = startColor;
+    }
+
+    public void setGradientEndColor(int endColor) {
+        this.gradientEndColor = endColor;
     }
 }
