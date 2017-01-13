@@ -28,7 +28,6 @@ public class CrescentoImageView extends ImageView {
     Context mContext;
 
     Path mClipPath;
-    Path mOutlinePath;
 
     int width = 0;
     int height = 0;
@@ -36,6 +35,11 @@ public class CrescentoImageView extends ImageView {
     Bitmap mBitmap;
 
     Paint tintPaint;
+
+    /**
+     * @param gravity whether TOP or BOTTOM
+     */
+    int gravity = Gravity.TOP;
 
     /**
      * @param curvatureHeight changes the amount of curve. Default is 50.
@@ -63,6 +67,11 @@ public class CrescentoImageView extends ImageView {
     int gradientEndColor = Color.TRANSPARENT;
 
     int curvatureDirection = CurvatureDirection.OUTWARD;
+
+    static public class Gravity {
+        static final int TOP = 0;
+        static final int BOTTOM = 1;
+    }
 
     static public class TintMode {
         static final int AUTOMATIC = 0;
@@ -104,7 +113,6 @@ public class CrescentoImageView extends ImageView {
         mPaint.setColor(Color.WHITE);
 
         mClipPath = new Path();
-        mOutlinePath = new Path();
 
         TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
         if (styledAttributes.hasValue(R.styleable.CrescentoImageView_curvature)) {
@@ -115,6 +123,14 @@ public class CrescentoImageView extends ImageView {
             if (styledAttributes.getInt(R.styleable.CrescentoImageView_tintAlpha, 0) <= 255
                     && styledAttributes.getInt(R.styleable.CrescentoImageView_tintAlpha, 0) >= 0) {
                 tintAmount = styledAttributes.getInt(R.styleable.CrescentoImageView_tintAlpha, 0);
+            }
+        }
+
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_gravity)) {
+            if (styledAttributes.getInt(R.styleable.CrescentoImageView_gravity, 0) == Gravity.BOTTOM) {
+                gravity = Gravity.BOTTOM;
+            } else {
+                gravity = Gravity.TOP;
             }
         }
 
@@ -165,7 +181,7 @@ public class CrescentoImageView extends ImageView {
         width = getMeasuredWidth();
         height = getMeasuredHeight();
 
-        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight, curvatureDirection,
+        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight, curvatureDirection, gravity,
                 getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight());
 
         ViewCompat.setElevation(this, ViewCompat.getElevation(this));
@@ -211,7 +227,7 @@ public class CrescentoImageView extends ImageView {
             @Override
             public void getOutline(View view, Outline outline) {
                 try {
-                    outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, curvatureDirection,
+                    outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, curvatureDirection, gravity,
                             getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
                 } catch (Exception e) {
                     Log.d("Outline Path", e.getMessage());

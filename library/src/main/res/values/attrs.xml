@@ -2,6 +2,10 @@
 <resources>
     <declare-styleable name="CrescentoImageView">
         <attr name="curvature" format="dimension"/>
+        <attr name="gravity" format="integer">
+            <flag name="top" value="0"/>
+            <flag name="bottom" value="1"/>
+        </attr>
         <attr name="curvatureDirection" format="integer">
             <flag name="outward" value="0"/>
             <flag name="inward" value="1"/>
