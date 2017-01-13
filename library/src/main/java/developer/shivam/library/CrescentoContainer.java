@@ -78,7 +78,7 @@ public class CrescentoContainer extends RelativeLayout {
         width = getMeasuredWidth();
         height = getMeasuredHeight();
 
-        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight, 0,
+        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight, 0, 0,
                 getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight());
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -100,7 +100,7 @@ public class CrescentoContainer extends RelativeLayout {
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
-                outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, 0,
+                outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, 0, 0,
                         getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
             }
         };

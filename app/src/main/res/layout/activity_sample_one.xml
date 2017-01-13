@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical">
 
     <developer.shivam.library.CrescentoImageView
@@ -11,23 +12,22 @@
         android:layout_height="400dp"
         android:elevation="5dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/wallpaper3_optimized"
-        app:curvature="40dp"
-        app:gradientDirection="bottom_to_top"
-        app:gradientStartColor="#00000000"
-        app:gradientEndColor="#FF5722"
-        app:curvatureDirection="inward"/>
+        app:curvature="100dp"
+        android:src="@drawable/rogue"
+        app:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        app:curvatureDirection="outward"/>
 
-    <android.support.design.widget.FloatingActionButton
+    <!--<android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="170dp"
         android:layout_marginRight="40dp"
         android:src="@drawable/ic_add_white_24dp"
         app:backgroundTint="#ff5722"
-        app:elevation="10dp" />
+        app:elevation="10dp" />-->
 
     <TextView
         android:id="@+id/tvStory"
