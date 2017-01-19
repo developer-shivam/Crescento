@@ -130,6 +130,19 @@ Attributes
 * **gradientStartColor** : gradient start color.
 * **gradientEndColor** : gradient end color.
  
+#Credits
+
+Author: Shivam Satija
+
+<a href="https://plus.google.com/108004024169425288075">
+  <img alt="Connect me on Google+" src="/art/gplus.png" />
+</a>
+<a href="https://www.facebook.com/developerShivam">
+  <img alt="Connect me on Facebook" src="/art/fb.png" />
+</a>
+<a href="https://in.linkedin.com/in/developershivam">
+  <img alt="Connect me on LinkedIn" src="/art/linkedin.png" />
+</a> 
 
 Question / Contact Me / Hire Me
 ---------------------
@@ -162,6 +175,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+[Facebook]:             /art/fb.png
+[Google+]:              /art/gplus.png
+[LinkedIn]:             /art/linkedin.png
 [SampleOne]:		 	/art/sample1_resize.png
 [SampleTwo]:			/art/sample2.png
 [SampleOneNexus]: 	 	/art/sample_image.jpg
