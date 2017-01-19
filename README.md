@@ -141,10 +141,10 @@ Shivam Satija (droidsergeant)
   <img alt="Connect me on Google+" src="/art/gplus.png" />
 </a>
 <a href="https://www.facebook.com/developerShivam">
-  <img alt="Connect me on Facebook" src="/art/fb.png" />
+  <img alt="Connect me on Facebook" src="/art/fb.png" width="64" height="64" />
 </a>
 <a href="https://in.linkedin.com/in/developershivam">
-  <img alt="Connect me on LinkedIn" src="/art/linkedin.png" width="64" height="64" />
+  <img alt="Connect me on LinkedIn" src="/art/linkedin.png" />
 </a> 
 
 Question / Contact Me / Hire Me
