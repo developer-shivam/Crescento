@@ -3,10 +3,10 @@ Crescento
 
 Android library that adds a curve at the below of image views and relative layouts. **CrescentoImageView** and **CrescentoContainer** are the image view and relative layout respectively. You can change the radius of curve with **attribute:curvature**.	
 
-[![API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=11)
+[![API](https://img.shields.io/badge/API-11%2B-red.svg)](https://android-arsenal.com/api?level=11)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Crescento-green.svg?style=true)](https://android-arsenal.com/details/1/4684)
 [![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23232-blue.svg)](http://androidweekly.net/issues/issue-232)
-[![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23119-blue.svg)](https://www.androiddevdigest.com/digest-119/)
+[![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23119-yellow.svg)](https://www.androiddevdigest.com/digest-119/)
 
 ![Sample Image 2][SampleOneNexus]
 
@@ -19,6 +19,7 @@ Overview
 * **Tint**: It add tint on **CrescentoImageView** by using **attribute:tintColor**. It pick color automatically from the image if **tintMode** is set to **automatic**.
 * **Alpha**: Add transparency in tint by using **attribute:tintAlpha**. Varies from 0 to 255.
 * **Gradient** : Add gradient on the imageview.
+* **Gravity** : You can now add crescento to bottom of your layout. Arc will form on top.
 
 **[Sample Apk]** 
 
@@ -82,7 +83,7 @@ If you are using gradle then add these lines in build.gradle file at project lev
 
 Add below lines in build.gradle at app level.
 ```java
-	compile 'com.github.developer-shivam:crescento:1.0.1'
+	compile 'com.github.developer-shivam:crescento:1.1.0'
 ```
 
 Basic Usage
@@ -98,6 +99,7 @@ Basic Usage
     android:layout_height="300dp"
     android:elevation="20dp"
     android:scaleType="centerCrop"
+    attribute:gravity="top"
     attribute:curvature="50dp"
     attribute:tintMode="manual"
     attribute:tintColor="#FFFFFF"
@@ -129,10 +131,11 @@ Attributes
 * **gradientDirection** : To set the direction of gradient. Supported direction are **TOP_TO_BOTTOM**, **BOTTOM_TO_TOP**, **LEFT_TO_RIGHT** and **RIGHT_TO_LEFT**.
 * **gradientStartColor** : gradient start color.
 * **gradientEndColor** : gradient end color.
+* **gravity** : To set gravity. **TOP** or **BOTTOM**.
  
-#Credits
+#Connect Me
 
-Author: Shivam Satija
+Shivam Satija (droidsergeant)
 
 <a href="https://plus.google.com/108004024169425288075">
   <img alt="Connect me on Google+" src="/art/gplus.png" />
@@ -141,12 +144,12 @@ Author: Shivam Satija
   <img alt="Connect me on Facebook" src="/art/fb.png" />
 </a>
 <a href="https://in.linkedin.com/in/developershivam">
-  <img alt="Connect me on LinkedIn" src="/art/linkedin.png" />
+  <img alt="Connect me on LinkedIn" src="/art/linkedin.png" width="64" height="64" />
 </a> 
 
 Question / Contact Me / Hire Me
 ---------------------
-Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be **12 lpa**.
+Please feel free to ping me at **dr.droid27@gmail.com**. Expected package would be **6 lpa**.
 
 License
 -------
