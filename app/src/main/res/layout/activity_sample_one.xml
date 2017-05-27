@@ -6,17 +6,17 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <developer.shivam.library.CrescentoImageView
+    <developer.shivam.crescento.ImageView
         android:id="@+id/crescentoImageView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
         android:elevation="5dp"
         android:scaleType="centerCrop"
-        app:curvature="100dp"
-        android:src="@drawable/rogue"
-        app:gravity="bottom"
-        android:layout_alignParentBottom="true"
-        app:curvatureDirection="outward"/>
+        app:curvature="30dp"
+        app:gravity="top"
+        app:curvatureDirection="outward"
+        android:src="@drawable/rogue" />
 
     <!--<android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"

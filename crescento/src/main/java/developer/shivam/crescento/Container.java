@@ -1,9 +1,8 @@
-package developer.shivam.library;
+package developer.shivam.crescento;
 
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Outline;
@@ -11,19 +10,18 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
-import android.support.v7.graphics.Palette;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewOutlineProvider;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-public class CrescentoContainer extends RelativeLayout {
+import developer.shivam.library.R;
+
+public class Container extends RelativeLayout {
 
     Context mContext;
 
@@ -40,14 +38,14 @@ public class CrescentoContainer extends RelativeLayout {
 
     Paint mPaint;
     private PorterDuffXfermode porterDuffXfermode;
-    private String TAG = "CRESCENTO_IMAGE_VIEW";
+    private String TAG = "CRESCENTO_CONTAINER";
 
-    public CrescentoContainer(Context context) {
+    public Container(Context context) {
         super(context);
         init(context, null);
     }
 
-    public CrescentoContainer(Context context, AttributeSet attrs) {
+    public Container(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
@@ -63,9 +61,9 @@ public class CrescentoContainer extends RelativeLayout {
         mClipPath = new Path();
         mOutlinePath = new Path();
 
-        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_curvature)) {
-            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_curvature, getDpForPixel(curvatureHeight));
+        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.ImageView, 0, 0);
+        if (styledAttributes.hasValue(R.styleable.ImageView_curvature)) {
+            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.ImageView_curvature, getDpForPixel(curvatureHeight));
         }
 
         styledAttributes.recycle();
@@ -78,8 +76,7 @@ public class CrescentoContainer extends RelativeLayout {
         width = getMeasuredWidth();
         height = getMeasuredHeight();
 
-        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight, 0, 0,
-                getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight());
+        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight, 0, 0);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ViewCompat.setElevation(this, ViewCompat.getElevation(this));
@@ -100,8 +97,7 @@ public class CrescentoContainer extends RelativeLayout {
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
-                outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, 0, 0,
-                        getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
+                outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, 0, 0));
             }
         };
     }

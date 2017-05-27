@@ -26,6 +26,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.flaviofaria:kenburnsview:1.0.7'
     compile 'com.android.support:cardview-v7:25.0.0'
-    compile project(':library')
+    compile project(':crescento')
+    compile 'com.github.florent37:arclayout:1.0.2'
     //compile 'com.github.developer-shivam:crescento:1.0.0'
 }

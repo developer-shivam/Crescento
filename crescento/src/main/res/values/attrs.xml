@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CrescentoImageView">
+    <declare-styleable name="ImageView">
         <attr name="curvature" format="dimension"/>
         <attr name="gravity" format="integer">
             <flag name="top" value="0"/>

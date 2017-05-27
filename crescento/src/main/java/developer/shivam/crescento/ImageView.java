@@ -1,4 +1,4 @@
-package developer.shivam.library;
+package developer.shivam.crescento;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -16,14 +16,16 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewOutlineProvider;
-import android.widget.ImageView;
 
-public class CrescentoImageView extends ImageView {
+import developer.shivam.library.R;
+
+public class ImageView extends AppCompatImageView {
 
     Context mContext;
 
@@ -35,6 +37,7 @@ public class CrescentoImageView extends ImageView {
     Bitmap mBitmap;
 
     Paint tintPaint;
+    Paint shaderPaint;
 
     /**
      * @param gravity whether TOP or BOTTOM
@@ -94,12 +97,12 @@ public class CrescentoImageView extends ImageView {
     private PorterDuffXfermode porterDuffXfermode;
     private String TAG = "CRESCENTO_IMAGE_VIEW";
 
-    public CrescentoImageView(Context context) {
+    public ImageView(Context context) {
         super(context);
         init(context, null);
     }
 
-    public CrescentoImageView(Context context, AttributeSet attrs) {
+    public ImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
@@ -112,52 +115,54 @@ public class CrescentoImageView extends ImageView {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.WHITE);
 
+        shaderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
         mClipPath = new Path();
 
-        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_curvature)) {
-            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_curvature, getDpForPixel(curvatureHeight));
+        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.ImageView, 0, 0);
+        if (styledAttributes.hasValue(R.styleable.ImageView_curvature)) {
+            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.ImageView_curvature, getDpForPixel(curvatureHeight));
         }
 
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_tintAlpha)) {
-            if (styledAttributes.getInt(R.styleable.CrescentoImageView_tintAlpha, 0) <= 255
-                    && styledAttributes.getInt(R.styleable.CrescentoImageView_tintAlpha, 0) >= 0) {
-                tintAmount = styledAttributes.getInt(R.styleable.CrescentoImageView_tintAlpha, 0);
+        if (styledAttributes.hasValue(R.styleable.ImageView_tintAlpha)) {
+            if (styledAttributes.getInt(R.styleable.ImageView_tintAlpha, 0) <= 255
+                    && styledAttributes.getInt(R.styleable.ImageView_tintAlpha, 0) >= 0) {
+                tintAmount = styledAttributes.getInt(R.styleable.ImageView_tintAlpha, 0);
             }
         }
 
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_gravity)) {
-            if (styledAttributes.getInt(R.styleable.CrescentoImageView_gravity, 0) == Gravity.BOTTOM) {
+        if (styledAttributes.hasValue(R.styleable.ImageView_gravity)) {
+            if (styledAttributes.getInt(R.styleable.ImageView_gravity, 0) == Gravity.BOTTOM) {
                 gravity = Gravity.BOTTOM;
             } else {
                 gravity = Gravity.TOP;
             }
         }
 
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_tintMode)) {
-            if (styledAttributes.getInt(R.styleable.CrescentoImageView_tintMode, 0) == TintMode.AUTOMATIC) {
+        if (styledAttributes.hasValue(R.styleable.ImageView_tintMode)) {
+            if (styledAttributes.getInt(R.styleable.ImageView_tintMode, 0) == TintMode.AUTOMATIC) {
                 tintMode = TintMode.AUTOMATIC;
             } else {
                 tintMode = TintMode.MANUAL;
             }
         }
 
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_gradientDirection)) {
-            gradientDirection = styledAttributes.getInt(R.styleable.CrescentoImageView_gradientDirection, 0);
+        if (styledAttributes.hasValue(R.styleable.ImageView_gradientDirection)) {
+            gradientDirection = styledAttributes.getInt(R.styleable.ImageView_gradientDirection, 0);
         }
 
         /* Default start color is transparent*/
-        gradientStartColor = styledAttributes.getColor(R.styleable.CrescentoImageView_gradientStartColor, Color.TRANSPARENT);
+        gradientStartColor = styledAttributes.getColor(R.styleable.ImageView_gradientStartColor, Color.TRANSPARENT);
 
         /* Default end color is transparent*/
-        gradientEndColor = styledAttributes.getColor(R.styleable.CrescentoImageView_gradientEndColor, Color.TRANSPARENT);
+        gradientEndColor = styledAttributes.getColor(R.styleable.ImageView_gradientEndColor, Color.TRANSPARENT);
 
-        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_tintColor)) {
-            tintColor = styledAttributes.getColor(R.styleable.CrescentoImageView_tintColor, 0);
+        if (styledAttributes.hasValue(R.styleable.ImageView_tintColor)) {
+            tintColor = styledAttributes.getColor(R.styleable.ImageView_tintColor, 0);
         }
 
         /* Default curvature direction would be outward*/
-        curvatureDirection = styledAttributes.getInt(R.styleable.CrescentoImageView_curvatureDirection, 0);
+        curvatureDirection = styledAttributes.getInt(R.styleable.ImageView_curvatureDirection, 0);
 
         styledAttributes.recycle();
 
@@ -181,8 +186,7 @@ public class CrescentoImageView extends ImageView {
         width = getMeasuredWidth();
         height = getMeasuredHeight();
 
-        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight, curvatureDirection, gravity,
-                getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight());
+        mClipPath = PathProvider.getClipPath(width, height, curvatureHeight, curvatureDirection, gravity);
 
         ViewCompat.setElevation(this, ViewCompat.getElevation(this));
 
@@ -227,8 +231,7 @@ public class CrescentoImageView extends ImageView {
             @Override
             public void getOutline(View view, Outline outline) {
                 try {
-                    outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, curvatureDirection, gravity,
-                            getPaddingTop(), getPaddingBottom(), getPaddingLeft(), getPaddingRight()));
+                    outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, curvatureDirection, gravity));
                 } catch (Exception e) {
                     Log.d("Outline Path", e.getMessage());
                 }
@@ -246,9 +249,8 @@ public class CrescentoImageView extends ImageView {
         }
 
         Shader mShader = GradientProvider.getShader(gradientStartColor, gradientEndColor, gradientDirection, canvas.getWidth(), canvas.getHeight());
-        Paint paint = new Paint();
-        paint.setShader(mShader);
-        canvas.drawPaint(paint);
+        shaderPaint.setShader(mShader);
+        canvas.drawPaint(shaderPaint);
 
         canvas.drawPath(mClipPath, mPaint);
         canvas.restoreToCount(saveCount);
@@ -259,7 +261,6 @@ public class CrescentoImageView extends ImageView {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pixel, mContext.getResources().getDisplayMetrics());
     }
 
-    /* Getter for attributes */
     public void setCurvature(int height) {
         curvatureHeight = getDpForPixel(height);
     }

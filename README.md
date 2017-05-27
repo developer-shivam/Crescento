@@ -73,17 +73,18 @@ Gradle Integration
 
 If you are using gradle then add these lines in build.gradle file at project level.
 ```java
-	allprojects {
-        repositories {
-            ...
-            maven { url "https://jitpack.io" }
-        }
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
     }
+}
+    
 ```
 
 Add below lines in build.gradle at app level.
 ```java
-	compile 'com.github.developer-shivam:crescento:1.1.0'
+compile 'com.github.developer-shivam:crescento:1.1.1'
 ```
 
 Basic Usage
@@ -91,10 +92,10 @@ Basic Usage
 
 *For a working implementation, see `/app` folder*
 
-**CrescentoImageView**
+**ImageView**
 
 ```xml
-<developer.shivam.library.CrescentoImageView android:id="@+id/crescentoImageView"
+<developer.shivam.crescento.ImageView android:id="@+id/crescentoImageView"
     android:layout_width="match_parent"
     android:layout_height="300dp"
     android:elevation="20dp"
@@ -106,10 +107,10 @@ Basic Usage
     attribute:tintAlpha="50" />
 ```
 
-**CrescentoContainer**
+**Container**
 
 ```xml
-<developer.shivam.library.CrescentoContainer android:id="@+id/crescentoContainer"
+<developer.shivam.crescento.Container android:id="@+id/crescentoContainer"
     android:layout_width="match_parent"
     android:layout_height="300dp"
     android:elevation="20dp"
@@ -133,7 +134,8 @@ Attributes
 * **gradientEndColor** : gradient end color.
 * **gravity** : To set gravity. **TOP** or **BOTTOM**.
  
-#Connect Me
+Connect With Me
+-----------
 
 Shivam Satija (droidsergeant)
 
