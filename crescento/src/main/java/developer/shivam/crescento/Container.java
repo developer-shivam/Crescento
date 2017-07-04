@@ -97,7 +97,11 @@ public class Container extends RelativeLayout {
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
-                outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, 0, 0));
+                try {
+                    outline.setConvexPath(PathProvider.getOutlinePath(width, height, curvatureHeight, 0, 0));
+                } catch (Exception e) {
+                    Log.d("Outline Path", e.getMessage());
+                }
             }
         };
     }
