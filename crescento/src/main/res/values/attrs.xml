@@ -10,12 +10,12 @@
             <flag name="outward" value="0"/>
             <flag name="inward" value="1"/>
         </attr>
-        <attr name="tintMode" format="integer">
+        <attr name="crescentoTintMode" format="integer">
             <flag name="automatic" value="0"/>
             <flag name="manual" value="1"/>
         </attr>
-        <attr name="tintColor" format="color"/>
-        <attr name="tintAlpha" format="integer"/>
+        <attr name="crescentoTintColor" format="color"/>
+        <attr name="crescentoTintAlpha" format="integer"/>
         <attr name="gradientDirection" format="integer">
             <flag name="top_to_bottom" value="0" />
             <flag name="bottom_to_top" value="1" />
