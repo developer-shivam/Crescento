@@ -84,7 +84,7 @@ allprojects {
 
 Add below lines in build.gradle at app level.
 ```java
-compile 'com.github.developer-shivam:crescento:1.1.1'
+compile 'com.github.developer-shivam:crescento:1.2.0'
 ```
 
 Basic Usage
@@ -102,8 +102,8 @@ Basic Usage
     android:scaleType="centerCrop"
     attribute:gravity="top"
     attribute:curvature="50dp"
-    attribute:tintMode="manual"
-    attribute:tintColor="#FFFFFF"
+    attribute:crescentoTintMode="manual"
+    attribute:crescentoTintColor="#FFFFFF"
     attribute:tintAlpha="50" />
 ```
 
