@@ -61,9 +61,9 @@ public class Container extends RelativeLayout {
         mClipPath = new Path();
         mOutlinePath = new Path();
 
-        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.ImageView, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.ImageView_curvature)) {
-            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.ImageView_curvature, getDpForPixel(curvatureHeight));
+        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.crescento, 0, 0);
+        if (styledAttributes.hasValue(R.styleable.crescento_curvature)) {
+            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.crescento_curvature, getDpForPixel(curvatureHeight));
         }
 
         styledAttributes.recycle();
