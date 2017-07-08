@@ -13,7 +13,7 @@
         app:cardElevation="0dp"
         app:cardCornerRadius="10dp">
 
-        <developer.shivam.crescento.ImageView
+        <developer.shivam.crescento.CrescentoImageView
             android:id="@+id/crescentoImageView"
             android:layout_width="match_parent"
             android:layout_height="300dp"

@@ -25,7 +25,7 @@ import android.view.ViewOutlineProvider;
 
 import developer.shivam.library.R;
 
-public class ImageView extends AppCompatImageView {
+public class CrescentoImageView extends AppCompatImageView {
 
     Context mContext;
 
@@ -97,12 +97,12 @@ public class ImageView extends AppCompatImageView {
     private PorterDuffXfermode porterDuffXfermode;
     private String TAG = "CRESCENTO_IMAGE_VIEW";
 
-    public ImageView(Context context) {
+    public CrescentoImageView(Context context) {
         super(context);
         init(context, null);
     }
 
-    public ImageView(Context context, AttributeSet attrs) {
+    public CrescentoImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
@@ -119,50 +119,50 @@ public class ImageView extends AppCompatImageView {
 
         mClipPath = new Path();
 
-        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.crescento, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.crescento_curvature)) {
-            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.crescento_curvature, getDpForPixel(curvatureHeight));
+        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_curvature)) {
+            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_curvature, getDpForPixel(curvatureHeight));
         }
 
-        if (styledAttributes.hasValue(R.styleable.crescento_crescentoTintAlpha)) {
-            if (styledAttributes.getInt(R.styleable.crescento_crescentoTintAlpha, 0) <= 255
-                    && styledAttributes.getInt(R.styleable.crescento_crescentoTintAlpha, 0) >= 0) {
-                tintAmount = styledAttributes.getInt(R.styleable.crescento_crescentoTintAlpha, 0);
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_crescentoTintAlpha)) {
+            if (styledAttributes.getInt(R.styleable.CrescentoImageView_crescentoTintAlpha, 0) <= 255
+                    && styledAttributes.getInt(R.styleable.CrescentoImageView_crescentoTintAlpha, 0) >= 0) {
+                tintAmount = styledAttributes.getInt(R.styleable.CrescentoImageView_crescentoTintAlpha, 0);
             }
         }
 
-        if (styledAttributes.hasValue(R.styleable.crescento_gravity)) {
-            if (styledAttributes.getInt(R.styleable.crescento_gravity, 0) == Gravity.BOTTOM) {
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_gravity)) {
+            if (styledAttributes.getInt(R.styleable.CrescentoImageView_gravity, 0) == Gravity.BOTTOM) {
                 gravity = Gravity.BOTTOM;
             } else {
                 gravity = Gravity.TOP;
             }
         }
 
-        if (styledAttributes.hasValue(R.styleable.crescento_crescentoTintMode)) {
-            if (styledAttributes.getInt(R.styleable.crescento_crescentoTintMode, 0) == TintMode.AUTOMATIC) {
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_crescentoTintMode)) {
+            if (styledAttributes.getInt(R.styleable.CrescentoImageView_crescentoTintMode, 0) == TintMode.AUTOMATIC) {
                 tintMode = TintMode.AUTOMATIC;
             } else {
                 tintMode = TintMode.MANUAL;
             }
         }
 
-        if (styledAttributes.hasValue(R.styleable.crescento_gradientDirection)) {
-            gradientDirection = styledAttributes.getInt(R.styleable.crescento_gradientDirection, 0);
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_gradientDirection)) {
+            gradientDirection = styledAttributes.getInt(R.styleable.CrescentoImageView_gradientDirection, 0);
         }
 
         /* Default start color is transparent*/
-        gradientStartColor = styledAttributes.getColor(R.styleable.crescento_gradientStartColor, Color.TRANSPARENT);
+        gradientStartColor = styledAttributes.getColor(R.styleable.CrescentoImageView_gradientStartColor, Color.TRANSPARENT);
 
         /* Default end color is transparent*/
-        gradientEndColor = styledAttributes.getColor(R.styleable.crescento_gradientEndColor, Color.TRANSPARENT);
+        gradientEndColor = styledAttributes.getColor(R.styleable.CrescentoImageView_gradientEndColor, Color.TRANSPARENT);
 
-        if (styledAttributes.hasValue(R.styleable.crescento_crescentoTintColor)) {
-            tintColor = styledAttributes.getColor(R.styleable.crescento_crescentoTintColor, 0);
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_crescentoTintColor)) {
+            tintColor = styledAttributes.getColor(R.styleable.CrescentoImageView_crescentoTintColor, 0);
         }
 
         /* Default curvature direction would be outward*/
-        curvatureDirection = styledAttributes.getInt(R.styleable.crescento_curvatureDirection, 0);
+        curvatureDirection = styledAttributes.getInt(R.styleable.CrescentoImageView_curvatureDirection, 0);
 
         styledAttributes.recycle();
 

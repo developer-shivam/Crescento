@@ -8,8 +8,8 @@ class PathProvider {
 
         Path mPath = new Path();
 
-        if (direction == ImageView.CurvatureDirection.OUTWARD) {
-            if (gravity == ImageView.Gravity.TOP) {
+        if (direction == CrescentoImageView.CurvatureDirection.OUTWARD) {
+            if (gravity == CrescentoImageView.Gravity.TOP) {
                 mPath.moveTo(0, 0);
                 mPath.lineTo(0, height - curvatureHeight);
                 mPath.quadTo(width / 2, height + curvatureHeight,
@@ -26,7 +26,7 @@ class PathProvider {
                 mPath.close();
             }
         } else {
-            if (gravity == ImageView.Gravity.TOP) {
+            if (gravity == CrescentoImageView.Gravity.TOP) {
                 mPath.moveTo(0, 0);
                 mPath.lineTo(0, height);
                 mPath.quadTo(width / 2, height - curvatureHeight,
@@ -52,8 +52,8 @@ class PathProvider {
 
         Path mPath = new Path();
 
-        if (direction == ImageView.CurvatureDirection.OUTWARD) {
-            if (gravity == ImageView.Gravity.TOP) {
+        if (direction == CrescentoImageView.CurvatureDirection.OUTWARD) {
+            if (gravity == CrescentoImageView.Gravity.TOP) {
 
                 mPath.moveTo(0, height - curvatureHeight);
                 mPath.quadTo(width / 2, height + curvatureHeight,
@@ -72,7 +72,7 @@ class PathProvider {
                 mPath.close();
             }
         } else {
-            if (gravity == ImageView.Gravity.TOP) {
+            if (gravity == CrescentoImageView.Gravity.TOP) {
                 mPath.moveTo(0, height);
                 mPath.quadTo(width / 2, height - 2 * curvatureHeight,
                         width, height);

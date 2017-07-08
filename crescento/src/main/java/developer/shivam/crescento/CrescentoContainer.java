@@ -21,7 +21,7 @@ import android.widget.RelativeLayout;
 
 import developer.shivam.library.R;
 
-public class Container extends RelativeLayout {
+public class CrescentoContainer extends RelativeLayout {
 
     Context mContext;
 
@@ -40,12 +40,12 @@ public class Container extends RelativeLayout {
     private PorterDuffXfermode porterDuffXfermode;
     private String TAG = "CRESCENTO_CONTAINER";
 
-    public Container(Context context) {
+    public CrescentoContainer(Context context) {
         super(context);
         init(context, null);
     }
 
-    public Container(Context context, AttributeSet attrs) {
+    public CrescentoContainer(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
@@ -61,9 +61,9 @@ public class Container extends RelativeLayout {
         mClipPath = new Path();
         mOutlinePath = new Path();
 
-        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.crescento, 0, 0);
-        if (styledAttributes.hasValue(R.styleable.crescento_curvature)) {
-            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.crescento_curvature, getDpForPixel(curvatureHeight));
+        TypedArray styledAttributes = mContext.obtainStyledAttributes(attrs, R.styleable.CrescentoImageView, 0, 0);
+        if (styledAttributes.hasValue(R.styleable.CrescentoImageView_curvature)) {
+            curvatureHeight = (int) styledAttributes.getDimension(R.styleable.CrescentoImageView_curvature, getDpForPixel(curvatureHeight));
         }
 
         styledAttributes.recycle();
