@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion 27
+    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "developer.shivam.crescento"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -21,10 +21,10 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:design:25.0.0'
+    compile 'com.android.support:appcompat-v7:27.0.1'
+    compile 'com.android.support:design:27.0.1'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.flaviofaria:kenburnsview:1.0.7'
-    compile 'com.android.support:cardview-v7:25.0.0'
+    compile 'com.android.support:cardview-v7:27.0.1'
     compile project(':crescento')
 }
