@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Outline;
@@ -13,6 +14,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.graphics.Palette;
@@ -57,7 +59,7 @@ public class CrescentoImageView extends AppCompatImageView {
     /**
      * @param tintMode whether manual or automatic. Default is TintMode.AUTOMATIC.
      */
-    int tintMode = TintMode.AUTOMATIC;
+    int tintMode = TintMode.MANUAL;
 
     /**
      * @param tintPaint color of tint to be applied
@@ -172,9 +174,11 @@ public class CrescentoImageView extends AppCompatImageView {
             pickColorFromBitmap(mBitmap);
         } else {
             if (getBackground() != null) {
-                BitmapDrawable mBitmapDrawable = (BitmapDrawable) getBackground();
-                mBitmap = mBitmapDrawable.getBitmap();
-                pickColorFromBitmap(mBitmap);
+                if (!(getBackground() instanceof ColorDrawable)) {
+                    BitmapDrawable mBitmapDrawable = (BitmapDrawable) getBackground();
+                    mBitmap = mBitmapDrawable.getBitmap();
+                    pickColorFromBitmap(mBitmap);
+                }
             }
         }
     }
@@ -206,9 +210,10 @@ public class CrescentoImageView extends AppCompatImageView {
                 if (tintMode == TintMode.AUTOMATIC) {
                     int defaultColor = 0x000000;
                     tintPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                    if (palette.getDarkVibrantColor(defaultColor) != 0) {
+                    if (palette.getDarkMutedColor(defaultColor) != 0) {
+                        System.out.println(palette.getMutedColor(defaultColor));
                         tintPaint.setColor(Color.parseColor("#" + Math.abs(palette.getDarkVibrantColor(defaultColor))));
-                    } else if (palette.getDarkMutedColor(defaultColor) != 0) {
+                    } else if (palette.getDarkVibrantColor(defaultColor) != 0) {
                         System.out.println(palette.getMutedColor(defaultColor));
                         tintPaint.setColor(Color.parseColor("#" + Math.abs(palette.getDarkMutedColor(defaultColor))));
                     } else {

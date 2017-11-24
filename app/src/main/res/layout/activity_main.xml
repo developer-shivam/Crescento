@@ -8,7 +8,7 @@
     android:background="@android:color/white"
     tools:context="developer.shivam.crescento.MainActivity">
 
-    <developer.shivam.library.CrescentoContainer android:id="@+id/crescentoContainer"
+    <developer.shivam.crescento.CrescentoImageView android:id="@+id/crescentoContainer"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:elevation="20dp"
@@ -124,7 +124,7 @@
                     android:textSize="12sp" />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-    </developer.shivam.library.CrescentoContainer>
+    </developer.shivam.crescento.CrescentoImageView>
 
     <ScrollView
         android:layout_width="match_parent"
