@@ -84,7 +84,7 @@ allprojects {
 
 Add below lines in build.gradle at app level.
 ```java
-compile 'com.github.developer-shivam:Crescento:1.2.0'
+compile 'com.github.developer-shivam:Crescento:1.2.1'
 ```
 
 Basic Usage

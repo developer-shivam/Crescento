@@ -26,5 +26,6 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.flaviofaria:kenburnsview:1.0.7'
     compile 'com.android.support:cardview-v7:27.0.1'
-    compile project(':crescento')
+
+    compile 'com.github.developer-shivam:Crescento:1.2.1'
 }
